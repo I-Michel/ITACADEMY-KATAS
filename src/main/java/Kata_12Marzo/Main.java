@@ -26,14 +26,15 @@ public class Main {
         StringBuilder fraseRoteada = new StringBuilder();
 
         for (int i = 0; i < frase.length(); i++) {
+            String charActual = Character.toString(frase.charAt(i));
             for (int j = 0; j < rot13.length; j++) {
-                String charActual = Character.toString(frase.charAt(i));
                 if (charActual.equalsIgnoreCase(rot13[j])) {
                     int contador = j + 13;
                     if (contador > rot13.length) {
                         contador = j - 13;
                     }
                     fraseRoteada.append(rot13[contador]);
+                    break;
                 }
             }
         }
